@@ -146,7 +146,7 @@ function renderLegend() {
 
 function checkSvg() {
   return `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4 12.5L9.5 18L20 6" stroke="#0b0d14" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M4 12.5L9.5 18L20 6" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>`;
 }
 
@@ -222,7 +222,7 @@ function renderCalendar() {
     if (fmtISO(d) === fmtISO(today)) cell.classList.add("today");
     if (fmtISO(monday) === fmtISO(selectedMonday)) cell.classList.add("selected");
 
-    cell.style.background = `color-mix(in srgb, ${person.color} 16%, transparent)`;
+    cell.style.background = `color-mix(in srgb, ${person.color} 12%, white)`;
     cell.dataset.monday = fmtISO(monday);
 
     cell.innerHTML = `
