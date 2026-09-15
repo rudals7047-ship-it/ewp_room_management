@@ -7,19 +7,19 @@
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-orbs">
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-    <span class="orb orb-3"></span>
-  </div>
-
   <div class="wrap">
     <header class="app-header">
       <div class="brand">
-        <span class="brand-mark">🏠</span>
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 11.5 12 4l8 7.5" />
+            <path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9" />
+            <path d="M10 20v-5h4v5" />
+          </svg>
+        </span>
         <div>
           <h1>사택 공용공간 당번</h1>
-          <p class="subtitle">화장실 청소 &amp; 분리수거 로테이션</p>
+          <p class="subtitle">화장실 청소 · 분리수거 · 진공청소기 관리</p>
         </div>
       </div>
       <div class="roster" id="roster"></div>

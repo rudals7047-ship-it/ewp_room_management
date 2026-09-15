@@ -10,10 +10,19 @@ const PEOPLE = [
   { name: "김경민", initial: "김", color: "var(--p2)" },
 ];
 
+const TASK_ICONS = {
+  toilet:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c4 5 6 8.5 6 11a6 6 0 1 1-12 0c0-2.5 2-6 6-11Z"/></svg>',
+  recycle:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.6-5.7M20 12a8 8 0 0 1-13.6 5.7"/><path d="M17 3v4h-4M7 21v-4h4"/></svg>',
+  vacuum:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 4 9 14"/><path d="M9 14 5 18c-1 1-1 2 0 3s2 1 3 0l4-4"/><path d="M7 16l3-3M9 18l3-3"/></svg>',
+};
+
 const TASKS = [
-  { key: "toilet", icon: "🚿", label: "화장실 청소" },
-  { key: "recycle", icon: "♻️", label: "분리수거" },
-  { key: "vacuum", icon: "🧹", label: "진공청소기 관리" },
+  { key: "toilet", label: "화장실 청소" },
+  { key: "recycle", label: "분리수거" },
+  { key: "vacuum", label: "진공청소기 관리" },
 ];
 
 const ANCHOR_MONDAY = new Date(2026, 8, 14); // 2026-09-14, Mon
@@ -158,7 +167,7 @@ function taskListHTML(monday, containerId) {
     return `
       <div class="task-item ${done ? "done" : ""}" data-task="${t.key}" data-container="${containerId}">
         <span class="task-check">${checkSvg()}</span>
-        <span class="task-icon">${t.icon}</span>
+        <span class="task-icon">${TASK_ICONS[t.key]}</span>
         <span class="task-label">${t.label}</span>
       </div>`;
   }).join("");
