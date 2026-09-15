@@ -13,6 +13,7 @@ const PEOPLE = [
 const TASKS = [
   { key: "toilet", icon: "🚿", label: "화장실 청소" },
   { key: "recycle", icon: "♻️", label: "분리수거" },
+  { key: "vacuum", icon: "🧹", label: "진공청소기 관리" },
 ];
 
 const ANCHOR_MONDAY = new Date(2026, 8, 14); // 2026-09-14, Mon
@@ -90,13 +91,13 @@ function saveStore(store) {
 function getWeekState(monday) {
   const store = loadStore();
   const key = fmtISO(monday);
-  return store[key] || { toilet: false, recycle: false };
+  return store[key] || { toilet: false, recycle: false, vacuum: false };
 }
 
 function toggleWeekTask(monday, taskKey) {
   const store = loadStore();
   const key = fmtISO(monday);
-  const state = store[key] || { toilet: false, recycle: false };
+  const state = store[key] || { toilet: false, recycle: false, vacuum: false };
   state[taskKey] = !state[taskKey];
   store[key] = state;
   saveStore(store);
